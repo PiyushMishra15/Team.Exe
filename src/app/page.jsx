@@ -1,7 +1,7 @@
 "use client";
 import DomainCard from "../../src/components/DomainCard";
 import Gallery from "../../src/components/Gallery";
-import { useState } from "react";
+
 const domains = [
   {
     title: "Web Development",
@@ -117,9 +117,6 @@ const CoordinatorCard = ({ name, role, image, linkedin }) => (
 );
 
 export default function Page() {
-  const [hasError, setHasError] = useState(false);
-  const [isVideoReady, setIsVideoReady] = useState(false);
-
   return (
     <>
       <div className="relative min-h-screen bg-gray-900 text-gray-200 font-sans">
@@ -127,25 +124,15 @@ export default function Page() {
         <div className="relative z-10">
           <div className="flex items-center justify-center h-screen overflow-hidden bg-gradient-to-b from-black to-black">
             {/* Fallback Image */}
-            {(!isVideoReady || hasError) && (
-              <img
-                src="/tem.exe.png" // replace with your fallback image path
-                alt="Fallback"
-                className="absolute object-contain w-full h-auto max-w-none sm:max-w-[90%] md:max-w-[70%] lg:max-w-full"
-              />
-            )}
 
             {/* Video */}
             <video
               className="absolute object-contain w-full h-auto max-w-none sm:max-w-[90%] md:max-w-[70%] lg:max-w-full"
               src="/0124(1).mov"
               autoPlay
-              playsInline
               muted
               title="Your Video Title"
               poster="/tem.exe.png"
-              onCanPlay={() => setIsVideoReady(true)}
-              onError={() => setHasError(true)}
             />
 
             <div className="absolute inset-0 flex items-center justify-center">
