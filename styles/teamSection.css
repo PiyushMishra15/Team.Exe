@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Miltonian&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: "Josefin Sans", sans-serif;
+}
+
+.team-section {
+    margin: 50px 20px;
+    text-align: center;
+}
+
+.section-title,
+.section-subtitle {
+    font-family: "Miltonian", cursive;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 60px;
+    font-size: 2.5rem;
+    margin: 2rem 0;
+}
+
+.team-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.team-card {
+    width: 250px;
+    height: 400px;
+    position: relative;
+    perspective: 1000px;
+    margin: 12px;
+    margin-bottom: 40px;
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.6s ease;
+    transform-style: preserve-3d;
+}
+
+.team-card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 10px;
+}
+
+.card-front {
+    background: linear-gradient(90deg, #0e3b68, #001c38);
+    font-weight: 600;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+
+}
+
+
+.card-back {
+    background: rgb(216, 216, 216);
+    color: #fff;
+    transform: rotateY(180deg);
+    padding: 20px;
+    gap: 10px;
+}
+
+.profile-img-container {
+    width: 150px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 5px solid #fff;
+    border-radius: 8%;
+}
+
+.team-card h2.name {
+    font-family: "bold";
+    color: #fff;
+    font-size: 22px;
+    margin-top: 20px;
+}
+
+.team-card h3.position {
+    color: #9370db;
+    margin: 10px 0;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.team-card h4.tagline {
+    color: #fff;
+    margin: 10px 0;
+    font-size: 15px;
+
+    text-align: center;
+}
+
+.links {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.links a img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.links a img:hover {
+    transform: scale(1.2);
+}
+
+@media (min-width: 768px) {
+    .team-card {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (min-width: 1024px) {
+    .team-card {
+        width: calc(25% - 20px);
+    }
+
+    .section-title,
+    .section-subtitle {
+        font-size: 3rem;
+    }
+}

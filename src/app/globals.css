@@ -1,0 +1,260 @@
+/* globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+}
+
+
+
+.coordinator-card:hover {
+  border-color: rgb(221, 206, 253); /* Purple border on hover */
+}
+
+.bg-dark-blue {
+  background-color: rgb(0, 0, 2);
+}
+
+.domain-card {
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+}
+
+.gallery-container .group {
+  position: relative;
+  overflow: hidden;
+}
+.gallery-container{
+  background-color: rgb(0, 0, 2);
+}
+.gallery-container img {
+  transition: transform 0.5s, border 0.5s;
+}
+
+.gallery-container .group:hover img {
+  transform: scale(1.1);
+  border: 4px solid #6C2BD9; /* Purple border */
+}
+
+@layer utilities {
+  .font-orbitron {
+    font-family: var(--font-orbitron);
+  }
+  .font-playfair {
+    font-family: var(--font-playfair);
+  }
+  .font-montserrat {
+    font-family: var(--font-montserrat);
+  }
+  .fontdiner-swanky-regular {
+    font-family: "Fontdiner Swanky", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradientShift 5s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.glow {
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5), 0 0 10px rgba(255, 255, 255, 0.3), 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+.neon-text {
+  color: #1e90ff; /* Neon blue base color */
+  text-shadow: 
+    0 0 5px #93c5fd, /* from-blue-300 */
+    0 0 30px #1e40af; /* deeper blue */
+}
+
+
+
+@keyframes titleReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-title {
+  animation: titleReveal 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.8s ease-out forwards;
+}
+
+@keyframes imageReveal {
+  0% {
+    clip-path: inset(100% 0 0 0);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.animate-image-reveal {
+  animation: imageReveal 1s ease-out forwards;
+}
+
+@keyframes neonFlicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff00de, 0 0 35px #ff00de, 0 0 40px #ff00de, 0 0 50px #ff00de, 0 0 75px #ff00de;
+  }
+  20%, 24%, 55% {
+    text-shadow: none;
+  }
+}
+
+.animate-neon {
+  animation: neonFlicker 2s infinite alternate;
+}
+
+@keyframes expand {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+.animate-expand {
+  animation: expand 1s ease-out forwards;
+}
+
+@keyframes revealOnScroll {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.workshop-item {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.workshop-item.animate-on-scroll {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes spotlightCard {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 2px solid transparent;
+  }
+  100% {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+  }
+}
+
+.spotlight-card:hover {
+  animation: decayCard 0.5s ease-out, spotlightCard 0.5s ease-out forwards;
+}
+.coordinator-card {
+  align-items: center;
+  width: 100%;
+  margin: 0 0;
+  border: 2px solid transparent;
+  transition: border-color 0.3s;
+  background-color: transparent;
+}
+.coordinator-card:hover {
+  border-color: rgb(144 97 249); /* Purple border on hover */
+}
+
+
+
+.coordinator-card img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 0 20px;
+}
+.coordinator-card .text-content {
+  flex: 1;
+}
+
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1E1E1E; /* Dark background for the track */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #9061F9; /* Purple color for the thumb */
+  border-radius: 6px;
+  border: 3px solid #1E1E1E; /* Padding around the thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #6C2BD9; /* Darker purple on hover */
+}
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #9061F9 #1E1E1E;
+}
+
+/* Navbar styles */
