@@ -140,6 +140,7 @@ export default function Page() {
               className="absolute object-contain w-full h-auto max-w-none sm:max-w-[90%] md:max-w-[70%] lg:max-w-full"
               src="/0124(1).mov"
               autoPlay
+              playsInline
               muted
               title="Your Video Title"
               onCanPlay={() => setIsVideoReady(true)}
