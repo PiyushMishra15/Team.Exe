@@ -143,6 +143,7 @@ export default function Page() {
               playsInline
               muted
               title="Your Video Title"
+              poster="/tem.exe.png"
               onCanPlay={() => setIsVideoReady(true)}
               onError={() => setHasError(true)}
             />
