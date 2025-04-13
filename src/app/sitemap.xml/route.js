@@ -1,3 +1,5 @@
+// app/sitemap.xml/route.js
+
 export async function GET() {
   const baseUrl = "https://teamexe.tech";
 
@@ -41,20 +43,19 @@ export async function GET() {
   ];
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
-    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-      ${routes
-        .map(
-          (route) => `
-        <url>
-          <loc>${route.url}</loc>
-          <lastmod>${route.lastModified.toISOString()}</lastmod>
-          <changefreq>${route.changeFrequency}</changefreq>
-          <priority>${route.priority}</priority>
-        </url>
-      `
-        )
-        .join("")}
-    </urlset>`;
+  <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    ${routes
+      .map(
+        (route) => `
+      <url>
+        <loc>${route.url}</loc>
+        <lastmod>${route.lastModified.toISOString()}</lastmod>
+        <changefreq>${route.changeFrequency}</changefreq>
+        <priority>${route.priority}</priority>
+      </url>`
+      )
+      .join("")}
+  </urlset>`;
 
   return new Response(xml, {
     headers: {
