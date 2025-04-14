@@ -60,6 +60,20 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Team .Exe",
+              url: "https://teamexe.tech",
+              logo: "https://teamexe.tech/exe 1.png",
+            }),
+          }}
+        />
+      </head>
       <body>
         <Navbar />
         <main>{children}</main>
