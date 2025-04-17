@@ -6,26 +6,30 @@ import { Toaster } from "@/components/ui/toaster";
 import Footerr from "../components/Footer";
 
 export const metadata = {
-  title: "Team .Exe | Innovating the Future",
+  title: "Team .Exe", // Updated title here
   description:
-    "Team .Exe is a dynamic technical team focused on innovation, technology, and real-world impact.",
+    "Team .Exe is a dynamic technical team from NIT Hamirpur, focused on innovation, technology, and real-world impact.",
   keywords: [
-    "Team Exe",
+    "Team .Exe",
     "tech team",
     "developers",
     "projects",
     "programming",
     "college tech club",
+    "NIT Hamirpur",
+    "innovation",
+    "technology",
+    "student-led team",
   ],
   authors: [{ name: "Team .Exe" }],
   creator: "Team .Exe",
   metadataBase: new URL("https://teamexe.tech"),
   openGraph: {
-    title: "Team .Exe | Innovating the Future",
+    title: "Team .Exe", // Updated here
     description:
-      "Discover Team .Exe - a passionate technical team building innovative projects and driving real-world change.",
+      "Discover Team .Exe – a passionate technical team from NIT Hamirpur building innovative projects and driving real-world change.",
     url: "https://teamexe.tech",
-    siteName: "Team .Exe",
+    siteName: "Team .Exe", // Updated here
     images: [
       {
         url: "https://teamexe.tech/3.png",
@@ -39,9 +43,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Team .Exe | Innovating the Future",
+    title: "Team .Exe", // Updated here
     description:
-      "Student-led team building real-world tech projects and solving real-world problems.",
+      "Student-led team from NIT Hamirpur building real-world tech projects and solving real-world problems.",
     images: ["https://teamexe.tech/1.png"],
     creator: "@teamexe",
   },
@@ -67,9 +71,15 @@ export default function RootLayout({ children }) {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              name: "Team .Exe",
+              name: "Team .Exe", // Updated here
+              alternateName: "TeamExe NITH", // If you want to keep this as an alternate name
               url: "https://teamexe.tech",
-              logo: "https://teamexe.tech/exe 1.png",
+              logo: "https://teamexe.tech/exe1.png", // Ensure the logo is correct
+              sameAs: [
+                "https://github.com/teamexe",
+                "https://instagram.com/teamexe",
+                "https://linkedin.com/company/teamexe",
+              ],
             }),
           }}
         />
