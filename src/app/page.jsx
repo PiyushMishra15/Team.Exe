@@ -120,6 +120,12 @@ export default function Page() {
   return (
     <>
       <div className="relative min-h-screen bg-gray-900 text-gray-200 font-sans">
+        <div className="hidden">
+          Team EXE, Team EXE NITH, TeamExeNITH, tech club NIT Hamirpur, NITH
+          developers, NITH coding society, NIT Hamirpur programming team,
+          TeamExe projects
+        </div>
+
         {/* Video Section */}
         <div className="relative z-10">
           <div className="flex items-center justify-center h-screen overflow-hidden bg-gradient-to-b from-black to-black">
