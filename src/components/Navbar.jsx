@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 
 export default function Navbar({
   leftLogo = "/nimbus.png", // Default left logo
-  rightLogo = "/exe 1.png", // Default right logo
+  rightLogo = "/exe1.png", // Default right logo
   navLinks = [
     { href: "/", label: "Home", icon: "/icons/home.png" },
     { href: "/AboutUs", label: "About", icon: "/icons/about.png" },
@@ -64,11 +64,10 @@ export default function Navbar({
 
         {/* Right Logo */}
         <div className="flex items-center">
-        <button onClick={() => router.push("/")}>
-          <img src={rightLogo} alt="Right Logo" className="h-12 w-auto" />
-          </button>        
+          <button onClick={() => router.push("/")}>
+            <img src={rightLogo} alt="Right Logo" className="h-12 w-auto" />
+          </button>
         </div>
-
       </div>
 
       {/* Sidebar Navigation */}
@@ -76,8 +75,9 @@ export default function Navbar({
         <div className="fixed inset-0 z-50 flex">
           {/* Sidebar */}
           <div
-            className={`w-60 bg-black bg-opacity-80 backdrop-blur-md p-6 relative transition-transform duration-300 ease-in-out transform ${isOpen ? "translate-x-0" : "-translate-x-full"
-              }`}
+            className={`w-60 bg-black bg-opacity-80 backdrop-blur-md p-6 relative transition-transform duration-300 ease-in-out transform ${
+              isOpen ? "translate-x-0" : "-translate-x-full"
+            }`}
           >
             {/* Close Button */}
             {/* Close Button */}
