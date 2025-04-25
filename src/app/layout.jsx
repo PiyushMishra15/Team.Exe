@@ -1,4 +1,4 @@
-// app/layout.js or app/layout.tsx
+// app/layout.tsx or app/layout.js
 
 import "./globals.css";
 import Navbar from "../components/Navbar";
@@ -6,7 +6,7 @@ import { Toaster } from "@/components/ui/toaster";
 import Footerr from "../components/Footer";
 
 export const metadata = {
-  title: "Team .Exe", // Updated title here
+  title: "Team .Exe",
   description:
     "Team .Exe is a dynamic technical team from NIT Hamirpur, focused on innovation, technology, and real-world impact.",
   keywords: [
@@ -25,11 +25,11 @@ export const metadata = {
   creator: "Team .Exe",
   metadataBase: new URL("https://teamexe.tech"),
   openGraph: {
-    title: "Team .Exe", // Updated here
+    title: "Team .Exe",
     description:
       "Discover Team .Exe – a passionate technical team from NIT Hamirpur building innovative projects and driving real-world change.",
     url: "https://teamexe.tech",
-    siteName: "Team .Exe", // Updated here
+    siteName: "Team .Exe",
     images: [
       {
         url: "https://teamexe.tech/3.png",
@@ -43,7 +43,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Team .Exe", // Updated here
+    title: "Team .Exe",
     description:
       "Student-led team from NIT Hamirpur building real-world tech projects and solving real-world problems.",
     images: ["https://teamexe.tech/1.png"],
@@ -54,7 +54,6 @@ export const metadata = {
   },
 };
 
-// ✅ Moved viewport to a separate export
 export const viewport = {
   width: "device-width",
   initialScale: 1,
@@ -65,16 +64,20 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+        {/* ✅ Added canonical and robots meta tags */}
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://teamexe.tech" />
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              name: "Team .Exe", // Updated here
-              alternateName: "TeamExe NITH", // If you want to keep this as an alternate name
+              name: "Team .Exe",
+              alternateName: "TeamExe NITH",
               url: "https://teamexe.tech",
-              logo: "https://teamexe.tech/exe1.png", // Ensure the logo is correct
+              logo: "https://teamexe.tech/exe1.png",
               sameAs: [
                 "https://github.com/teamexe",
                 "https://instagram.com/teamexe",
